@@ -102,7 +102,7 @@ class AuthController extends AbstractActionController
       $this->bsock->set_user_credentials($username, $password);
 
       if(!$this->bsock->connect_and_authenticate()) {
-         $err_msg = "Sorry, can not authenticate. Wrong username and/or password.";
+         $err_msg = "Sorry, can not authenticate. Wrong username and password or SSL/TLS handshake failed.";
          return $this->createNewLoginForm($form, $multi_dird_env, $err_msg, $this->bsock);
       }
 
